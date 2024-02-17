@@ -17,7 +17,9 @@ const bidderSchema=mongoose.Schema({
     "mobilenum":{
         type:String,
         required: [true, "Please add the user Mobileno"],
-    }
+    },
+    "role":"Bidder",
+    
 },{timestamps: true,});
 
 
