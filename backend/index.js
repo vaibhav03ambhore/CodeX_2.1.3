@@ -24,6 +24,7 @@ app.use('/api/bidder',bidderrouter);
 app.use(cors());
 app.use(express.urlencoded({extended:true}));
 
+app.use('/api/bidder',bidderrouter);
 app.use('/api/organizer',userRoutes);
 app.get('/',(req,res)=>{
     res.send("welcome to CodeX");
