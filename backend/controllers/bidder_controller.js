@@ -1,7 +1,7 @@
 import asyncerrorHandler from 'express-async-handler';
 import { hash, compare } from "bcrypt";
 import jwt from "jsonwebtoken";
-// import { findOne, create } from '../models/biddermodel.js';
+import model from '../models/biddermodel.js';
 
 
 //secret kay
@@ -14,7 +14,7 @@ const registerBidder = asyncerrorHandler(async (req, res) => {
       res.status(400);
       throw new Error("All fields are mandatory!");
     }
-    const BidderAvailable = await findOne({ email });
+    const BidderAvailable = await model.findOne({ email });
     if (BidderAvailable) {
       res.status(400);
       throw new Error("Bidder already registered!");
@@ -23,7 +23,7 @@ const registerBidder = asyncerrorHandler(async (req, res) => {
     //Hash password
     const hashedPassword = await hash(password, 10);
     console.log("Hashed Password: ", hashedPassword);
-    const Bidder = await create({
+    const Bidder = await model.create({
       username,
       email,
       password: hashedPassword,
@@ -47,7 +47,7 @@ const loginBidder = asyncerrorHandler(async (req, res) => {
       res.status(400);
       throw new Error("All fields are mandatory!");
     }
-    const Bidder = await findOne({ email });
+    const Bidder = await model.findOne({ email });
     //compare password with hashedpassword
     if (Bidder && (await compare(password, Bidder.password))) {
       const accessToken = jwt.sign({
