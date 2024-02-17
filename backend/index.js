@@ -1,9 +1,9 @@
-const express=require('express');
+import express from 'express';
 const app=express();
 const PORT=8000;
-const dbconnect=require("./confiq/databaseconnect");
-const errorhandler=require("./middlewares/errorhandler");
-const bidderrouter=require("./routes/bidder_routes");
+import dbconnect from "./confiq/db.js";
+import errorhandler from "./middlewares/errorhandler.js";
+import bidderrouter from "./routes/bidder_routes.js";
 
 
 //DatabaseConnection

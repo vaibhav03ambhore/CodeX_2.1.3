@@ -1,6 +1,6 @@
-const mongoose=require('mongoose');
+import mongoose, { Schema, model } from 'mongoose';
 
-const bidderSchema=mongoose.Schema({
+const bidderSchema=Schema({
     "username":{
         type:String,
         required: [true, "Please add the user name"],
@@ -23,5 +23,5 @@ const bidderSchema=mongoose.Schema({
 },{timestamps: true,});
 
 
-
-module.exports=mongoose.model("Bidder", bidderSchema);
+const biddermodel=mongoose.model("Bidder", bidderSchema);
+export default biddermodel;

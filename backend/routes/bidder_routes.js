@@ -1,8 +1,8 @@
-const express=require('express');
-const { registerBidder, loginBidder } = require('../controllers/bidder_controller');
-const router=express.Router();
+import { Router } from 'express';
+import { registerBidder, loginBidder } from '../controllers/bidder_controller.js';
+const router=Router();
 
 router.post('/register',registerBidder);
 router.post('/login',loginBidder);
 
-module.exports=router;
+export default router;
