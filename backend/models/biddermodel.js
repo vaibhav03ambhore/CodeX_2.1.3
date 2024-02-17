@@ -1,6 +1,6 @@
-import mongoose, { Schema, model } from 'mongoose';
+import mongoose from 'mongoose';
 
-const bidderSchema=Schema({
+const bidderSchema=mongoose.Schema({
     "username":{
         type:String,
         required: [true, "Please add the user name"],
@@ -18,7 +18,10 @@ const bidderSchema=Schema({
         type:String,
         required: [true, "Please add the user Mobileno"],
     },
-    "role":"Bidder",
+    "role":{
+        type:String,
+        default:"bidder",
+    },
     
 },{timestamps: true,});
 

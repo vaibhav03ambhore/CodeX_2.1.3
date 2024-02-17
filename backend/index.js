@@ -1,14 +1,15 @@
 import express from 'express';
+
+const app=express();
 import errorhandler from "./middlewares/errorhandler.js";
 import bidderrouter from "./routes/bidder_routes.js";
+
 
 import dotenv from 'dotenv';
 import userRoutes from './routes/userRoutes.js';
 import connectDB from './config/db.js';
 import cors from 'cors';
 
-
-const app=express();
 
 dotenv.config();
 const port=process.env.PORT || 3000;
@@ -18,6 +19,7 @@ connectDB(DATABASE_URL);
 
 app.use(express.json());
 app.use(errorhandler);
+app.use('/api/bidder',bidderrouter);
 
 app.use(cors());
 app.use(express.urlencoded({extended:true}));
