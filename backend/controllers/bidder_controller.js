@@ -1,10 +1,8 @@
 import asyncerrorHandler from 'express-async-handler';
 import { hash, compare } from "bcrypt";
 import jwt from "jsonwebtoken";
-// import { findOne, create } from '../models/biddermodel.js';
+import biddermodel from '../models/biddermodel';
 
-
-//secret kay
 const secret='P@$mandge2003';
 
 
@@ -14,7 +12,7 @@ const registerBidder = asyncerrorHandler(async (req, res) => {
       res.status(400);
       throw new Error("All fields are mandatory!");
     }
-    const BidderAvailable = await findOne({ email });
+    const BidderAvailable = await biddermodel.findOne({ email });
     if (BidderAvailable) {
       res.status(400);
       throw new Error("Bidder already registered!");
