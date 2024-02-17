@@ -35,7 +35,7 @@ const createOrganizer=asyncHandler(async(req,res)=>{
     try{
 
         await newOrganizer.save();
-        creatToken(res,newOrganizer._id);
+        // creatToken(res,newOrganizer._id);
         res.status(201).json(newOrganizer);
 
     }catch(error){
@@ -56,7 +56,7 @@ const loginOrganizer=asyncHandler(async(req,res)=>{
     else{
         const isPasswordValid=await bcrypt.compare(password,existingOrganizer.password);
         if(isPasswordValid){
-            creatToken(res,existingOrganizer._id);
+            creatToken(res,existingOrganizer);
             res.status(201).json(
                 {
                     _id:existingOrganizer._id,
