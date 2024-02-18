@@ -7,7 +7,7 @@ const Bidding = () => {
     }
     return (
         <section className='pt-[80px]'>
-            <div className='h-[100vh] bg-gray-50'>
+            <div className='md:h-[100vh] bg-gray-50'>
                 <div className="p-[20px] w-full sm:flex items-center">
                     <div className="left md:w-[40%] h-[100%] sm:flex-col">
                         <img className="rounded-t-lg md:max-w-[100%] rounded-3xl max-h-[50%]" src={Img1} />
@@ -31,7 +31,7 @@ const Bidding = () => {
                         <div className='flex-col text-center'>
                             <p className='m-2 font-bold text-lime-600'>Current Bid Price</p>
                             <p className='p-2 text-2xl'>{bid}K</p>
-                            <button onClick={increament} type="button" className="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 m-2">Bid</button>
+                            <button onClick={increament} type="button" className="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 m-2">Bid Here</button>
                         </div>
                     </div>
                 </div>
