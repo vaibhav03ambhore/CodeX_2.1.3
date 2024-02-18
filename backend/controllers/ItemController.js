@@ -3,9 +3,9 @@ import uploadOnCloudinary from "../utils/cloudinary.js";
 import Item from "../models/items.js";
 
 const createItem = asyncHandler(async (req, res) => {
-    const { name, category, detail, price } = req.body;
+    const { name, category, detail, price,fixedIncrement,rules } = req.body;
 
-    if (!name || !category || !detail || !price) {
+    if (!name || !category || !detail || !price || !fixedIncrement ||!rules) {
         console.log("Please fill all the details!");
         throw new Error("Please fill all the details!!");
     }
@@ -28,6 +28,8 @@ const createItem = asyncHandler(async (req, res) => {
         image: uploadedImage.url || "", 
         detail,
         price,
+        fixedIncrement,
+        rules,
         organizer: req.organizer._id 
     });
 
@@ -41,6 +43,8 @@ const createItem = asyncHandler(async (req, res) => {
             image: newItem.image,
             detail: newItem.detail,
             price: newItem.price,
+            fixedIncrement: newItem.fixedIncrement,
+            rules: newItem.rules,
             organizer: newItem.organizer
         });
     } catch (error) {

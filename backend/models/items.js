@@ -23,6 +23,14 @@ const itemSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
+    fixedIncrement:{
+        type: Number,
+        required: true
+    },
+    rules:{
+        type: String,
+        required: true
+    },
     bidded:{
         type: Boolean,
         default: false
