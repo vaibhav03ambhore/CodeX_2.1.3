@@ -33,7 +33,6 @@ const createOrganizer=asyncHandler(async(req,res)=>{
       });
 
     try{
-
         await newOrganizer.save();
         creatToken(res,newOrganizer._id);
         res.status(201).json(newOrganizer);
