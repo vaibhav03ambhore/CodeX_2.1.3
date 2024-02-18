@@ -3,8 +3,6 @@ import { hash, compare } from "bcrypt";
 import jwt from "jsonwebtoken";
 import model from '../models/biddermodel.js';
 
-
-//secret kay
 const secret='P@$mandge2003';
 
 
