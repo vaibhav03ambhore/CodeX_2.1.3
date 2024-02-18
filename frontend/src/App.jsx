@@ -10,6 +10,7 @@ import Role from './pages/Role';
 import Browse from './pages/Browse';
 
 import ReadMore from './Components/ReadMore';
+import Chatbot from 'react-chatbot-kit';
 
 
 function App() {
@@ -25,7 +26,6 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/role" element={<Role />} />
         <Route path="/readmore" element={<ReadMore />} />
-
       </Routes>
       <Footer />
     </div>
