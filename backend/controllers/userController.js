@@ -32,7 +32,6 @@ const createOrganizer=asyncHandler(async(req,res)=>{
       });
 
     try{
-
         await newOrganizer.save();
         // creatToken(res,newOrganizer._id);
         res.status(201).json(newOrganizer);
@@ -62,10 +61,10 @@ const loginOrganizer=asyncHandler(async(req,res)=>{
                     _id:existingOrganizer._id,
                     username:existingOrganizer.username,
                     email:existingOrganizer.email,
+                    address:existingOrganizer.address,
                     accessToken:accessToken
                 }
             );
-
         }
     }
 });
@@ -77,7 +76,7 @@ const logoutCurrentOrganizer=asyncHandler(async(req,res)=>{
     });
     res.status(200).json({message:"Successfully logged out"});
     
-})
+});
 
 
 const getAllOrganizers=asyncHandler(async(req,res)=>{
