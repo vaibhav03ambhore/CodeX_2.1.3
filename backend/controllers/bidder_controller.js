@@ -58,12 +58,6 @@ const loginBidder = asyncerrorHandler(async (req, res) => {
         secret,
         { expiresIn: "15m" }
       );
-
-      // return res.status(200).cookie(token,{
-      //   httpOnly: true,
-      //   sameSite: 'strict',
-      //   maxAge: 90 * 24 * 60 * 60 * 1000 // 90 days
-      // });
       res.cookie("jwt",token);
       res.status(200).json({ token });
     } else {

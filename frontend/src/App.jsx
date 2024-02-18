@@ -9,6 +9,7 @@ import Register from './Components/Login/Register';
 import Role from './Components/Login/Role';
 import ReadMore from './Components/ReadMore';
 import Bidding from './pages/Bidding'
+import ProfilePage from './pages/profilePage/Profile';
 function App() {
 
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/role" element={<Role />} />
         <Route path="/readmore" element={<ReadMore />} />
         <Route path="/bidding" element={<Bidding />} />
+        <Route path="/profile" element={<ProfilePage/>} />
       </Routes>
       <Footer />
     </div>
