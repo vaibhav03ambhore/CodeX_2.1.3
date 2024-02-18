@@ -1,14 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios';
-import { toast, ToastContainer } from 'react-toastify';
+
 import { Navigate } from 'react-router-dom';
+import { useState } from 'react';
 
 const Register = () => {
 
-    function showAlert() {
-        toast.error("Please Check Credentials");
-    }
+    
 
     const [formData, setFormData] = useState({
         username: '',

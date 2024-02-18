@@ -1,6 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useState } from 'react';
+import { toast, ToastContainer } from 'react-toastify';
+import { Navigate } from 'react-router-dom';
+
 const Login = () => {
+
+    function showAlert() {
+        toast.error("Please Check Credentials");
+    }
 
     const [formData, setFormData] = useState({
         email: '',
@@ -15,9 +23,11 @@ const Login = () => {
         e.preventDefault();
 
         try {
+            showAlert();
             const response = await axios.post('/api/login', formData);
             console.log(response.data); // Log response from the backend
             // Optionally, redirect the user or perform any action based on the response
+            return <Navigate to={'/'} />
         } catch (error) {
             console.error('Error logging in:', error.response.data);
             // Handle error, display error message to the user, etc.
