@@ -55,7 +55,14 @@ const createItem = asyncHandler(async (req, res) => {
 });
 
 const getAllItems = asyncHandler(async (req, res) => {
-    const items = await Item.find({});
+    const {name}=req.query;
+    const queryobject={};
+
+    if(name){
+        queryobject=name;
+        console.log(queryobject);
+    }
+    const items = await Item.find(queryobject);
     res.json(items);
 });
 
