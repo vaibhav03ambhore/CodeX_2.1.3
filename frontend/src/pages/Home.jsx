@@ -3,8 +3,8 @@ import CarouselPage from '../Components/CarouselPage'
 import { Link } from 'react-router-dom'
 const Home = () => {
     return (
-        <div className=''>
-            <div className='h-[80vh] bg-gray-50 relative mt-5'>
+        <section className='pt-[80px]'>
+            <div className='h-[80vh] bg-gray-50 relative'>
                 <div className="p-[40px] w-full sm:flex gap-4 items-center">
                     <div className="left md:w-[50%] rounded-3xl">
                         <div className='justify-center text-center font-[italic]'>
@@ -22,7 +22,7 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
 
