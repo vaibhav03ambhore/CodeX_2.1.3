@@ -1,11 +1,11 @@
 import express  from "express";
 import {upload} from "../middlewares/multer.middleware.js";
 import { createItem, getAllItems } from "../controllers/ItemController.js";
-import { authenticate} from "../middlewares/authMiddleware.js";
+import { authenticateOrganizer} from "../middlewares/authMiddleware.js";
 
 const router=express.Router();
 
-router.route('/create').post(authenticate,upload.fields([
+router.route('/create').post(authenticateOrganizer,upload.fields([
     {
         name: 'image',
         maxCount: 1

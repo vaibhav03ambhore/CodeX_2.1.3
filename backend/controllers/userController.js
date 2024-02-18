@@ -65,7 +65,6 @@ const loginOrganizer=asyncHandler(async(req,res)=>{
                     accessToken:accessToken
                 }
             );
-
         }
     }
 });
@@ -77,7 +76,7 @@ const logoutCurrentOrganizer=asyncHandler(async(req,res)=>{
     });
     res.status(200).json({message:"Successfully logged out"});
     
-})
+});
 
 
 const getAllOrganizers=asyncHandler(async(req,res)=>{
