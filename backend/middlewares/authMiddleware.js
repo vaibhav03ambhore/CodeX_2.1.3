@@ -7,10 +7,14 @@ const authenticate = asyncHandler(async (req, res, next) => {
 
     //read jwt from the 'jwt' cookie
     token=req.cookies.jwt;
+    // console.log(token);
     if(token){
         try{
             const decoded=Jwt.verify(token,process.env.JWT_SECRET);
-            req.organizer=await Organizer.findById(decoded.userId).select("-password");
+            // console.log(decoded);
+            req.organizer=await Organizer.findById(decoded.id);
+            // console.log(decoded,req.organizer);
+            // console.log(req.organizer);
             next();
         }catch(error){
             res.status(401);

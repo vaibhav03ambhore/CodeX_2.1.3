@@ -6,7 +6,7 @@ import { authenticate} from "../middlewares/authMiddleware.js";
 
 const router=express.Router();
 
-router.route('/').post(createOrganizer).get(authenticate,getAllOrganizers);
+router.route('/register').post(createOrganizer).get(authenticate,getAllOrganizers);
 router.post('/login',loginOrganizer);
 router.post('/logout',logoutCurrentOrganizer);
 

@@ -1,6 +1,6 @@
 import asyncHandler from '../middlewares/asyncHandler.js';
 import bcrypt from 'bcryptjs';
-import creatToken from '../utils/createTokens.js';
+import generateToken from '../utils/createTokens.js';
 import Organizer from '../models/userModel.js';
 
 const createOrganizer=asyncHandler(async(req,res)=>{
@@ -48,6 +48,7 @@ const loginOrganizer=asyncHandler(async(req,res)=>{
     const {email, password}=req.body
     
     const existingOrganizer= await Organizer.findOne({email});
+    // console.log(existingOrganizer._id);
     if(!existingOrganizer){
         res.status(400);
         throw new Error("Invalid email or password");
@@ -55,7 +56,7 @@ const loginOrganizer=asyncHandler(async(req,res)=>{
     else{
         const isPasswordValid=await bcrypt.compare(password,existingOrganizer.password);
         if(isPasswordValid){
-            const accessToken=creatToken(res,existingOrganizer);
+            const accessToken = generateToken(res, existingOrganizer._id);
             res.status(201).json(
                 {
                     _id:existingOrganizer._id,
