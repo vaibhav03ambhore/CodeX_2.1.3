@@ -62,6 +62,7 @@ const loginOrganizer=asyncHandler(async(req,res)=>{
                     _id:existingOrganizer._id,
                     username:existingOrganizer.username,
                     email:existingOrganizer.email,
+                    address:existingOrganizer.address,
                     accessToken:accessToken
                 }
             );

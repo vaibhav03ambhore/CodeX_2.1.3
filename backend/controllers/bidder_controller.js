@@ -65,7 +65,10 @@ const loginBidder = asyncerrorHandler(async (req, res) => {
       //   maxAge: 90 * 24 * 60 * 60 * 1000 // 90 days
       // });
       res.cookie("jwt",token);
-      res.status(200).json({ token });
+      res.status(200).json({_id:Bidder._id,
+        username:Bidder.username,
+        email:Bidder.email,
+        mobilenum:Bidder.mobilenum});
     } else {
       res.status(401);
       throw new Error("email or password is not valid");
