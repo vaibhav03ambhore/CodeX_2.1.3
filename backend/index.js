@@ -1,10 +1,9 @@
 import express from 'express';
 
-const app=express();
 import errorhandler from "./middlewares/errorhandler.js";
 import bidderrouter from "./routes/bidder_routes.js";
-
-
+import itemRoutes from "./routes/ItemRoutes.js";
+import cookieParser from "cookie-parser";
 import dotenv from 'dotenv';
 import userRoutes from './routes/userRoutes.js';
 import connectDB from './config/db.js';
@@ -15,17 +14,19 @@ dotenv.config();
 const port=process.env.PORT || 3000;
 const DATABASE_URL=process.env.MONGODB_URI;
 
+const app=express();
 connectDB(DATABASE_URL);
 
 app.use(express.json());
 app.use(errorhandler);
-app.use('/api/bidder',bidderrouter);
-
+app.use(cookieParser());
 app.use(cors());
 app.use(express.urlencoded({extended:true}));
 
 app.use('/api/bidder',bidderrouter);
 app.use('/api/organizer',userRoutes);
+app.use('/api/bid-items',itemRoutes);
+
 app.get('/',(req,res)=>{
     res.send("welcome to CodeX");
 });
