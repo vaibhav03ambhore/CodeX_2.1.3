@@ -2,6 +2,7 @@ import asyncerrorHandler from 'express-async-handler';
 import { hash, compare } from "bcrypt";
 import jwt from "jsonwebtoken";
 import model from '../models/biddermodel.js';
+import bidAmountmodel from '../models/auction_user.js';
 
 const secret='P@$mandge2003';
 
@@ -64,6 +65,7 @@ const loginBidder = asyncerrorHandler(async (req, res) => {
       throw new Error("email or password is not valid");
     }
 });
+
 
   
 export { 
