@@ -2,7 +2,6 @@ import React from 'react'
 import BrowserBid from './BrowserBid'
 import FilterCategories from '../Components/FilterCategories'
 
-
 const Browse = () => {
   return (
     <div className="flex flex-row">
