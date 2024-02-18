@@ -8,7 +8,7 @@ import Login from './Components/Login/Login'
 import Register from './Components/Login/Register';
 import Role from './Components/Login/Role';
 import ReadMore from './Components/ReadMore';
-
+import Bidding from './pages/Bidding'
 function App() {
 
   return (
@@ -21,6 +21,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/role" element={<Role />} />
         <Route path="/readmore" element={<ReadMore />} />
+        <Route path="/bidding" element={<Bidding />} />
       </Routes>
       <Footer />
     </div>

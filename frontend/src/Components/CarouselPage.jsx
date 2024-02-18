@@ -12,56 +12,42 @@ function CarouselPage() {
             text="First slide"
           />
           <Carousel.Caption>
-            <h3>First slide label</h3>
-            {/* <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p> */}
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
           <img
             className="px-[10px] h-[30vh] pt-[20px] w-[100%] md:px-[50px] md:h-[50vh] md:pt-[20px] md:w-[100%]"
-            src="/src/images/comp.png"
+            src="/src/images/Asset.jpg"
             text="Second slide"
           />
           <Carousel.Caption>
-            <h3>Second slide label</h3>
-            {/* <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> */}
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
           <img
             className="px-[10px] h-[30vh] pt-[20px] w-[100%] md:px-[50px] md:h-[50vh] md:pt-[20px] md:w-[100%]"
-            src="/src/images/entc.png"
+            src="/src/images/Home.jpg"
             text="Third slide"
           />
           <Carousel.Caption>
-            <h3>Third slide label</h3>
-            {/* <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> */}
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
           <img
             className="px-[10px] h-[30vh] pt-[20px] w-[100%] md:px-[50px] md:h-[50vh] md:pt-[20px] md:w-[100%] md:object-fill"
-            src="/src/images/it.png"
+            src="/src/images/Bike.jpg"
             text="Fourth slide"
           />
           <Carousel.Caption>
-            <h3>Fourth slide label</h3>
-            {/* <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-          </p> */}
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
           <img
             className="px-[10px] h-[30vh] pt-[20px] w-[100%] md:px-[50px] md:h-[50vh] md:pt-[20px] md:w-[100%] md:object-fill"
-            src="/src/images/it.png"
+            src="/src/images/Bike.jpg"
             text="Fifth slide"
           />
           <Carousel.Caption>
-            <h3>Fourth slide label</h3>
-            {/* <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-          </p> */}
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
