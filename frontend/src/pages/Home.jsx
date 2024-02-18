@@ -1,6 +1,5 @@
 import React from 'react'
 import CarouselPage from '../Components/CarouselPage'
-
 import { Link } from 'react-router-dom'
 const Home = () => {
     return (
