@@ -56,14 +56,13 @@ const loginOrganizer=asyncHandler(async(req,res)=>{
     else{
         const isPasswordValid=await bcrypt.compare(password,existingOrganizer.password);
         if(isPasswordValid){
-            creatToken(res,existingOrganizer);
+            const accessToken=creatToken(res,existingOrganizer);
             res.status(201).json(
                 {
                     _id:existingOrganizer._id,
                     username:existingOrganizer.username,
                     email:existingOrganizer.email,
-                    name:existingOrganizer.name,
-                    organization:existingOrganizer.organization
+                    accessToken:accessToken
                 }
             );
 
