@@ -22,7 +22,7 @@ const BrowserBid = () => {
   },[])
 
   return (
-    <section className='pt-[95px] md:flex rtl bg-nc'>
+    <section className='pt-[95px] md:flex rtl bg-nc md:h-[100vh]'>
       <div className='Left md:w-[20%] '>
         <FilterCategories />
       </div>

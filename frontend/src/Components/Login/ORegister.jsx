@@ -50,8 +50,8 @@ const ORegister = () => {
     
     return (
         <div className=''>
-            <section className="bg-gray-50 flex items-center justify-center pt-[80px]">
-                <div className="py-4 px-4 mx-auto max-w-screen-xl lg:py-16">
+            <section className="bg-nc flex items-center justify-center pt-[80px]">
+                <div className="py-4 px-4 mx-auto max-w-screen-xl lg:py-16 bg-nc">
                     <div>
                         <div className="w-full lg:max-w-xl p-6 space-y-4 sm:p-4 bg-white rounded-lg shadow-xl">
                             <h2 className="text-2xl font-bold text-gray-900">
