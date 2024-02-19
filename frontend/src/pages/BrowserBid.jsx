@@ -8,22 +8,33 @@ import axios from 'axios';
 const BrowserBid = () => {
 
   const [itemsData,setItemsData]=useState([]);
+  const [selectedCategory, setSelectedCategory] = useState('All');
 
-  useEffect(()=>{
-    axios.get('http://localhost:3000/api/bid-items')
-     .then(res => {
-        console.log(res.data)
-        setItemsData(res.data)
-      })
-     .catch(err => {
-        console.log(err)
-      })
-  },[])
+  useEffect(() => {
+    axios.get('http://localhost:3000/api/bid-items', {
+      params: {
+        category: selectedCategory // Use the state variable here
+      }
+    })
+    .then(response => {
+      console.log(response.data);
+      setItemsData(response.data);
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+  }, [selectedCategory]); // Add selectedCategory as a dependency
+
+  const handleFilterChange = (selectedCategory) => {
+    // Since selectedCategory is now the category object, you can directly set the state
+    setSelectedCategory(selectedCategory.name); // Update the selectedCategory state
+  };
+  
 
   return (
     <section className='pt-[95px] md:flex rtl bg-nc'>
       <div className='Left md:w-[20%] '>
-        <FilterCategories />
+        <FilterCategories onFilter={handleFilterChange}/>
       </div>
       <div className='right md:w-[80%] p-3 border-s-4 border-indigo-500/75'>        
         {itemsData.map(item => (
@@ -47,6 +58,7 @@ const BrowserBid = () => {
                     </svg>
                   </button>
                 </Link>
+                <span className='border-red-200 p-2'>category: {item.category}</span>
               </div>
             </div>
           </div>
