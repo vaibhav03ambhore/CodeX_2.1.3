@@ -21,10 +21,6 @@ const organizerSchema= mongoose.Schema({
         type:String,
         default:"organizer"
     },
-    name:{
-        type:String,
-        required:true
-    },
     address:{
         type:String,
         required:true

@@ -48,7 +48,7 @@ const loginBidder = asyncerrorHandler(async (req, res) => {
     const Bidder = await model.findOne({ email });
     //compare password with hashedpassword
     if (Bidder && (await compare(password, Bidder.password))) {
-      const accessToken = jwt.sign({
+      const token = jwt.sign({
           Bidder: {
             username: Bidder.Biddername,
             email: Bidder.email,
@@ -58,15 +58,38 @@ const loginBidder = asyncerrorHandler(async (req, res) => {
         secret,
         { expiresIn: "15m" }
       );
-      res.status(200).json({ accessToken });
+
+      // return res.status(200).cookie(token,{
+      //   httpOnly: true,
+      //   sameSite: 'strict',
+      //   maxAge: 90 * 24 * 60 * 60 * 1000 // 90 days
+      // });
+      res.cookie("jwt",token);
+      res.status(200).json({_id:Bidder._id,
+        username:Bidder.username,
+        email:Bidder.email,
+        mobilenum:Bidder.mobilenum});
     } else {
       res.status(401);
       throw new Error("email or password is not valid");
     }
 });
 
+const logoutBidder = asyncerrorHandler(async (req, res) => {
+  res.clearCookie('jwt');
+  res.json("deleted successfully");
+});
+
+
+const senduser=asyncerrorHandler(async(req,res)=>{
+  res.json("authenticated user");
+});
+
   
 export { 
     registerBidder,
     loginBidder,
+    logoutBidder,
+    senduser,
+    secret,
 };
