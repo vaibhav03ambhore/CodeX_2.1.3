@@ -4,12 +4,14 @@ import Organizer from "../models/userModel.js";
 import { secret } from "../controllers/bidder_controller.js";
 import biddermodel from "../models/biddermodel.js";
 
+
 const authenticateOrganizer = asyncHandler(async (req, res, next) => {
     let token;
-
     //read jwt from the 'jwt' cookie
     token=req.cookies.jwt;
-    // console.log(token);
+    console.log(req.cookies)
+
+    console.log(token);
     if(token){
         try{
             const decoded=Jwt.verify(token,process.env.JWT_SECRET);

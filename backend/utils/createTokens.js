@@ -7,7 +7,7 @@ const generateToken = (res, organizerId) => {
         process.env.JWT_SECRET,
         { expiresIn: '90d' }
     );
-
+        console.log(token);
     // Setting cookie
     res.cookie('jwt', token, {
         httpOnly: true,

@@ -22,7 +22,11 @@ app.use(express.json());
 app.use(errorhandler);
 app.use(cookieParser());
 
-app.use(cors());
+// app.use(cors());
+app.use(cors({
+    origin: 'http://localhost:5173', // Replace with your frontend origin
+    credentials: true
+  }));
 app.use(express.urlencoded({extended:true}));
 
 // routes middlewares

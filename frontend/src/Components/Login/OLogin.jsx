@@ -25,7 +25,11 @@ const OLogin = () => {
         }
         try {
             console.log(formData);
-            const response = await axios.post('http://localhost:3000/api/organizer/login', formData);
+            const response = await axios.post('http://localhost:3000/api/organizer/login', formData,
+            {
+                withCredentials: true,
+            });
+
             console.log(response.data);
             if (response.status === 201) {
                 alert('Login successful');
