@@ -21,7 +21,7 @@ connectDB(DATABASE_URL);
 app.use(express.json());
 app.use(errorhandler);
 app.use(cookieParser());
-app.use('/api/bidder',bidderrouter);
+
 app.use(cors());
 app.use(express.urlencoded({extended:true}));
 

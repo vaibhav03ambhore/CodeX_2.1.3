@@ -4,7 +4,7 @@ import { ImUsers } from "react-icons/im";
 import { ImUserTie } from "react-icons/im";
 const Role = () => {
     return (
-        <section className='h-[100vh] pt-[80px]'>
+        <section className='h-[100vh] pt-[80px] bg-nc'>
             <div className="p-[20px] w-full  md:flex gap-2">
                 <div className="left md:w-[50%] flex justify-center items-center p-3">
                     <div className='text-7xl text-center text-orange-600'>

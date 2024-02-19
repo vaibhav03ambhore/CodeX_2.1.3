@@ -10,6 +10,8 @@ import OLogin from './Components/Login/OLogin';
 import Role from './Components/Login/Role';
 import ReadMore from './Components/ReadMore';
 import Bidding from './pages/Bidding'
+import BidObject from './Components/BidObject';
+import BidForm from './Components/BidForm';
 function App() {
 
   return (
@@ -25,6 +27,8 @@ function App() {
         <Route path="/readmore" element={<ReadMore />} />
         <Route path="/browserbid" element={<BrowserBid />} />
         <Route path="/bidding" element={<Bidding />} />
+        <Route path="/bidobject" element={<BidObject />} />
+        <Route path="/bidform" element={<BidForm/>} />
       </Routes>
       <Footer />
     </div>

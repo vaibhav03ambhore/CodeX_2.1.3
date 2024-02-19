@@ -34,12 +34,12 @@ const Navbar = () => {
     ];
     return (
         <section>
-            <header className='p-3 flex justify-between shadow-md w-full fixed-top bg-dark z-20 text-white'>
-                <Link to={'/'} href='' className='flex items-center gap-1'>
+            <header className='p-1 flex justify-between shadow-md fixed-top bg-dark z-20 text-white'>
+                <Link to={'/'} href='' className='flex items-center gap-1 '>
                     <ImHammer2 className='text-4xl	' />
-                    <div className='font-bold font-[Georgia] text-xl'><span className='text-nc text-3xl underline decoration-wavy m-2'>Auction</span>Katta</div>
+                    <div className='font-cus m-2'><span className='text-3xl font-extrabold underline decoration-wavy'>A</span>uction Katta</div>
                 </Link>
-                <div className="hidden md:flex gap-2 border border-gray-300 rounded-full py-2 px-4 shadow-md shadow-gray-300 font-[Georgia]">
+                <div className="font-cus hidden md:flex gap-2 border border-gray-300 rounded-full py-2 px-4 shadow-md shadow-gray-300">
                     <Link exact to="/">
                         <div className=' mx-8 my-1'>Home</div>
                     </Link>
@@ -48,7 +48,7 @@ const Navbar = () => {
                         <div className=' mx-8 my-1'>Browse Bids</div>
                     </Link>
                 </div>
-                <div className="flex items-center gap-2 border border-gray-300 rounded-full py-2 px-4">
+                <div className="flex items-center gap-2 border border-gray-300 rounded-full px-4">
                     <div className="md:hidden cursor-pointer">
                         <div onClick={toggleNavbar}>{isOpen ? <CrossMenu /> : <HamburgerMenu />} </div>
                     </div>
@@ -67,7 +67,7 @@ const Navbar = () => {
                     Links.map((Link) => (
                         <li key={Link.name} className='my-20'>
                             <a href={Link.link}
-                                className='text-primary-800 hover:text-primary-400 duration-500 relative'>{Link.name}</a>
+                                className='font-cus text-primary-800 hover:text-primary-400 duration-500 relative'>{Link.name}</a>
                         </li>
                     ))
                 }

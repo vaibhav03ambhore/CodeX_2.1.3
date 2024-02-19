@@ -5,9 +5,9 @@ import Organizer from '../models/userModel.js';
 
 const createOrganizer=asyncHandler(async(req,res)=>{
     
-    const {username,email,password,role,name,address,organization}=req.body;
+    const {username,email,password,role,address,organization}=req.body;
      
-    if (!username || !email || !password || !name || !address) {
+    if (!username || !email || !password || !address) {
         res.status(400);
         throw new Error("Please fill all the required fields");
       }
@@ -27,7 +27,6 @@ const createOrganizer=asyncHandler(async(req,res)=>{
         email,
         password: hashedPassword,
         role: role || 'organizer',
-        name,
         address,
         organization: organization || null 
       });
