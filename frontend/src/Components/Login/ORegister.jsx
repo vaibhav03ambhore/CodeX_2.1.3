@@ -1,10 +1,10 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link , useNavigate} from 'react-router-dom'
 import { useState } from 'react';
 import axios from 'axios';
 
 const ORegister = () => {
-
+    const navigate = useNavigate()
     const [formData, setFormData] = useState({
         username: '',
         email: '',
@@ -36,7 +36,10 @@ const ORegister = () => {
         try {
             const response = await axios.post('http://localhost:3000/api/organizer/register', formData);
             console.log(response); 
-            if(response) alert("registered successfully")
+            if(response) {
+                alert("registered successfully")
+                navigate('/ologin')
+            }
             
         } catch (error) {
             console.error('Error registering user:', error.response.data);

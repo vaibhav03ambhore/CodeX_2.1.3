@@ -1,11 +1,12 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link,useNavigate } from 'react-router-dom'
 import { useState } from 'react';
 import axios from 'axios';
 
 
 const OLogin = () => {
 
+    const navigate = useNavigate()
     const [formData, setFormData] = useState({
         email: '',
         password: ''
@@ -29,7 +30,7 @@ const OLogin = () => {
             if (response.status === 201) {
                 alert('Login successful');
                 // Optionally, redirect the user or perform any other actions needed after successful login
-                return <Navigate to={'/'} />
+                navigate('/bidobject')
             }
             if(response.status==401) alert('credential are not correct!')
             
