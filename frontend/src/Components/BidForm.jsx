@@ -64,6 +64,7 @@ const BidForm = () => {
     
             navigate('/browserbid')
           console.log(response.data); 
+          alert('item details submitted successfully');
     
         } catch (error) {
           console.error("Error submitting items:", error);

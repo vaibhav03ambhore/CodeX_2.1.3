@@ -1,5 +1,4 @@
 import React from 'react'
-import Img1 from '../Images/Bike.jpg'
 import '../index.css'
 import FilterCategories from '../Components/FilterCategories'
 import { Link } from 'react-router-dom'
