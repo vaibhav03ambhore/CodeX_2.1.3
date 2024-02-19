@@ -14,5 +14,4 @@ router.route('/create').post(authenticateOrganizer,upload.fields([
 
 router.route('/').get(getAllItems);
 
-
 export default router;

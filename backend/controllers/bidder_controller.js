@@ -2,7 +2,10 @@ import asyncerrorHandler from 'express-async-handler';
 import { hash, compare } from "bcrypt";
 import jwt from "jsonwebtoken";
 import model from '../models/biddermodel.js';
-
+import Randomstring from 'randomstring';
+import nodemailer from 'nodemailer';
+import { config } from 'dotenv';
+import mailconfig from '../config/mail.js';
 const secret='P@$mandge2003';
 
 
@@ -75,11 +78,53 @@ const loginBidder = asyncerrorHandler(async (req, res) => {
     }
 });
 
+
 const logoutBidder = asyncerrorHandler(async (req, res) => {
   res.clearCookie('jwt');
   res.json("deleted successfully");
 });
 
+const forgetpassword=asyncerrorHandler(async(req,res)=>{
+  try {
+    const {enteredmail}=req.body;
+    const check=await model.findOne({enteredmail});
+
+    if(check){
+      const transporter=nodemailer.createTransport({
+        host: "1.2.3.4",
+        port: 465,
+        secure: false,
+        requireTLS:true,
+        auth:{
+          user:mailconfig.emailuser,
+          pass:mailconfig.password
+        }
+      });
+
+      const mailoptions={
+        from:mailconfig.emailuser,
+        to:enteredmail,
+        subject:"reset password",
+        html:'<p>hii please reset your password </p>'
+      };
+
+      transporter.sendMail(mailoptions,(err,infor)=>{
+        if(err){
+          console.log(err);
+        }
+        else{
+          console.log("Mail has been sent");
+        }
+      })
+
+    }
+    else{
+      res.status(200).json({msg:"this email does not exist"});
+    }
+  } catch (error) {
+    res.status(401).json({msg:"Some error occured"});
+  }
+});
 
 const senduser=asyncerrorHandler(async(req,res)=>{
   res.json("authenticated user");
@@ -91,5 +136,6 @@ export {
     loginBidder,
     logoutBidder,
     senduser,
+    forgetpassword,
     secret,
 };
