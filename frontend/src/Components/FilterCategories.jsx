@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 
 const categories = [
-  { id: 1, name: 'Category 1' },
-  { id: 2, name: 'Category 2' },
-  { id: 3, name: 'Category 3' },
-  { id: 4, name: 'Category 4' },
+  { id: 1, name: 'All' },
+  { id: 2, name: 'Collectible' },
+  { id: 3, name: 'Art' },
+  { id: 4, name: 'Real estate' },
 ];
 
 const FilterCategories = ({ onFilter }) => {
