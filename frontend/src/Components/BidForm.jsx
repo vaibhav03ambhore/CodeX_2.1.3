@@ -58,7 +58,8 @@ const BidForm = () => {
             const response = await axios.post('http://localhost:3000/api/bid-items/create',formDataToSend,{
                  headers: {
                     'Content-Type': 'multipart/form-data'
-                }
+                },
+                withCredentials: true
             });
     
       

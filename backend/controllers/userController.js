@@ -66,6 +66,10 @@ const loginOrganizer=asyncHandler(async(req,res)=>{
                 }
             );
         }
+        else {
+            res.status(401);
+            throw new Error("email or password is not valid");
+        }
     }
 });
 

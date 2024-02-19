@@ -3,6 +3,8 @@ import uploadOnCloudinary from "../utils/cloudinary.js";
 import Item from "../models/items.js";
 
 const createItem = asyncHandler(async (req, res) => {
+    // console.log(req.files);
+    // console.log(req.body);
     const { name, category, detail, price,fixedIncrement,rules } = req.body;
 
     if (!name || !category || !detail || !price || !fixedIncrement ||!rules) {
