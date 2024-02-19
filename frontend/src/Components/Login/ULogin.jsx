@@ -2,11 +2,11 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { useState } from 'react';
 // import { toast, ToastContainer } from 'react-toastify';
-import { Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const Login = () => {
-
+    const navigate = useNavigate()
     const [formData, setFormData] = useState({
         email: '',
         password: ''
@@ -30,7 +30,7 @@ const Login = () => {
             if (response.status === 200) {
                 alert('Login successful');
                 // Optionally, redirect the user or perform any other actions needed after successful login
-                return <Navigate to={'/'} />
+                navigate('/')
             }
             if(response.status==401) alert('credential are not correct!')
             

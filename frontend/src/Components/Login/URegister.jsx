@@ -1,11 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import axios from 'axios';
 
 const Register = () => {
-
+    const navigate = useNavigate()
     const [formData, setFormData] = useState({
         username: '',
         email: '',
@@ -33,7 +33,7 @@ const Register = () => {
             console.log(response.data); // Log response from the backend
             alert('registered successfully');
             // Optionally, redirect the user or display a success message
-            // return <Navigate to={'/'} />
+            navigate('/ulogin')
         } catch (error) {
             console.error('Error registering user:', error.response.data);
             // Handle error, display error message to the user, etc.
