@@ -31,11 +31,13 @@ const Register = () => {
 
             const response = await axios.post('http://localhost:3000/api/bidder/register', formData);
             console.log(response.data); // Log response from the backend
+            alert('registered successfully');
             // Optionally, redirect the user or display a success message
             // return <Navigate to={'/'} />
         } catch (error) {
             console.error('Error registering user:', error.response.data);
             // Handle error, display error message to the user, etc.
+            alert(error.response.data);
         }
     };
 
