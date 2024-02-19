@@ -3,11 +3,11 @@ import CarouselPage from '../Components/CarouselPage'
 import { Link } from 'react-router-dom'
 const Home = () => {
     return (
-        <section className='pt-[80px]'>
-            <div className='md:h-[90vh] bg-gray-50 relative'>
+        <section className='pt-[60px]'>
+            <div className='md:h-[90vh] bg-nc relative '>
                 <div className="p-[40px] w-full sm:flex gap-4 items-center">
                     <div className="left md:w-[50%] rounded-3xl">
-                        <div className='justify-center text-center font-[italic]'>
+                        <div className='justify-center text-center font-cus '>
                             <h1 className='text-4xl	p-3'>Discover</h1>
                             <h2 className='text-5xl text-red-600 font-bold p-2'>The World</h2>
                             <h3 className='text-6xl'>Largest Bidding Platform</h3>

@@ -4,7 +4,7 @@ const Register = () => {
     return (
         <div className=''>
             <section className="bg-gray-50 flex grid justify-items-center pt-[80px]">
-                <div className="py-4 px-4 mx-auto max-w-screen-xl lg:py-16 grid lg:grid-cols-2 gap-8 lg:gap-16">
+                <div className="py-4 px-4 mx-auto max-w-screen-xl lg:py-16">
                     <div>
                         <div className="w-full bg-danger lg:max-w-xl p-6 space-y-4 sm:p-4 bg-white rounded-lg shadow-xl">
                             <h2 className="text-2xl font-bold text-gray-900">
