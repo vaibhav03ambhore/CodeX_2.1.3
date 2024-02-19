@@ -2,21 +2,27 @@ import React, { useState } from 'react';
 
 const categories = [
   { id: 1, name: 'All' },
-  { id: 2, name: 'Collectible' },
+  { id: 2, name: 'collectible' },
   { id: 3, name: 'Art' },
-  { id: 4, name: 'Real estate' },
+  { id: 4, name: 'real_estate' },
 ];
 
 const FilterCategories = ({ onFilter }) => {
   const [selectedCategories, setSelectedCategories] = useState([]);
 
-  const handleCheckboxChange = (categoryId) => {
-    const newSelectedCategories = selectedCategories.includes(categoryId)
-      ? selectedCategories.filter((id) => id !== categoryId)
-      : [...selectedCategories, categoryId];
+  const handleCheckboxChange = (category) => {
+    let newSelectedCategories;
+    if (selectedCategories.includes(category.id)) {
+      // If the category is already selected, deselect it
+      newSelectedCategories = selectedCategories.filter((id) => id !== category.id);
+    } else {
+      // If the category is not selected, select it
+      newSelectedCategories = [...selectedCategories, category.id];
+    }
     setSelectedCategories(newSelectedCategories);
-    onFilter(newSelectedCategories);
+    onFilter(category); // Pass the category name instead of the object
   };
+  
 
   return (
     <div className="p-4">
@@ -28,7 +34,7 @@ const FilterCategories = ({ onFilter }) => {
               type="checkbox"
               className="form-checkbox h-5 w-5 text-indigo-600"
               checked={selectedCategories.includes(category.id)}
-              onChange={() => handleCheckboxChange(category.id)}
+              onChange={() => handleCheckboxChange(category)}
             />
             <span className="ml-2">{category.name}</span>
           </label>

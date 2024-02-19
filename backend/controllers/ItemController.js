@@ -57,15 +57,22 @@ const createItem = asyncHandler(async (req, res) => {
 });
 
 const getAllItems = asyncHandler(async (req, res) => {
-    const {name}=req.query;
-    const queryobject={};
-
-    if(name){
-        queryobject=name;
-        console.log(queryobject);
+    const { category } = req.query;
+    const queryObject = {};
+  
+    // If a category is provided and it's not 'All', add it to the query object
+    if (category && category !== 'All') {
+      queryObject.category = category;
     }
-    const items = await Item.find(queryobject);
+  
+    // Sort items by category in ascending order
+    const items = await Item.find(queryObject).sort({ category:  1 });
+  
     res.json(items);
-});
+  });
+  
+  export { getAllItems, createItem };
+  
+  
 
-export { getAllItems, createItem };
+  
