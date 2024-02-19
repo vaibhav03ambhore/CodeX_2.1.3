@@ -89,7 +89,7 @@ const BidForm = () => {
                                 </div>
                                 <div>
                                     <label for="category" className="block mb-2 text-sm font-medium text-gray-900">Bid Category</label>
-                                    <input type="category" name="category" id="category" value={formData.category} onChange={handleChange} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="bid category" required />
+                                    <input type="category" name="category" id="category" value={formData.category} onChange={handleChange} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="collectible/Art/real_estate" required />
                                 </div>
                                 <div>
                                     <label for="file" className="block mb-2 text-sm font-medium text-gray-900">Bid Image</label>
@@ -112,9 +112,7 @@ const BidForm = () => {
                                     <input type="text" name="rules" id="rules" value={formData.rules} onChange={handleChange} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3.5" placeholder="type your rules" required />
                                 </div>
                                 <button type="submit" onClick={handleSubmit} className="w-full px-5 py-3 text-base font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 sm:w-auto">Create Bid</button>
-                                <div className="text-sm font-medium text-gray-900">
-                                    Already registered ? <Link to={'/'}><a className="text-blue-600 hover:underline ">Click Here Login</a></Link>
-                                </div>
+                                
                             </form>
                         </div>
                     </div>
