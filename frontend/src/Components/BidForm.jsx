@@ -1,10 +1,10 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link,useNavigate } from 'react-router-dom'
 import { useState } from 'react';
 import axios from 'axios';
 
 const BidForm = () => {
-  
+    const navigate = useNavigate()
     const [formData, setFormData] = useState({
         name: '',
         category: '',
@@ -62,7 +62,7 @@ const BidForm = () => {
                 withCredentials: true
             });
     
-      
+            navigate('/browserbid')
           console.log(response.data); 
     
         } catch (error) {
