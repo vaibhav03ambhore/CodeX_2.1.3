@@ -6,9 +6,13 @@ export default {
   ],
   theme: {
     fontFamily: {
-      'sans': ['Helvetica', 'Arial', 'sans-serif'],
+      cus: ["Roboto", "sans-serif"],
     },
-    extend: {},
+    extend: {
+      colors: {
+        nc: '#D9F5F8',
+      }
+    },
   },
   plugins: [],
 }
