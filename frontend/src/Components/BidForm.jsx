@@ -20,9 +20,10 @@ const BidForm = () => {
   
       const handleFileChange=(event)=>{
         console.log('file changed')
-        setSelectedFile(event.target.files[0]);
+        const file=event.target.files[0];
+        setSelectedFile(file);
         // console.log(event.target.files)
-        console.log('selected file is : ',selectedFile)
+        console.log('selected file is : ',file)
       }
   
       const handleChange = (e) => {
